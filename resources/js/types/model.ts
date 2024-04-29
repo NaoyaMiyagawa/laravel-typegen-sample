@@ -1,7 +1,7 @@
 export type User = {
     id: number;
-    name: any;
-    email: any;
+    name: string;
+    email: string;
     email_verified_at?: any;
     created_at?: any;
     updated_at?: any;
@@ -10,8 +10,8 @@ export type User = {
     latest_published_post?: Post;
 };
 export type Post = {
-    id: any;
-    title: any;
+    id: string;
+    title: string;
     content?: string;
     tags?: any;
     metadata?: any;
