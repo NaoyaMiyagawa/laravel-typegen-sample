@@ -13,8 +13,8 @@ export type Post = {
     id: string;
     title: string;
     content?: string;
-    tags?: any;
-    metadata?: any;
+    tags?: any[];
+    metadata?: Record<string, any>;
     status: PostStatus;
     user_id: number;
     created_at?: any;
