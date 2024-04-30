@@ -2,9 +2,9 @@ export type User = {
     id: number;
     name: string;
     email: string;
-    email_verified_at?: any;
-    created_at?: any;
-    updated_at?: any;
+    email_verified_at?: string;
+    created_at?: string;
+    updated_at?: string;
     posts?: Post[];
     latest_post?: Post;
     latest_published_post?: Post;
@@ -17,8 +17,8 @@ export type Post = {
     metadata?: Record<string, any>;
     status: PostStatus;
     user_id: number;
-    created_at?: any;
-    updated_at?: any;
+    created_at?: string;
+    updated_at?: string;
     user?: User;
 };
 export enum PostStatus {
