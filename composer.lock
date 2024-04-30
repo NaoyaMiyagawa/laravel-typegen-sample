@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bf587d052ae532dce5bcff0d2588a25",
+    "content-hash": "8c23b8550dff046b5c92ff39e87ce7fe",
     "packages": [
         {
             "name": "brick/math",
@@ -2600,6 +2600,38 @@
                 }
             ],
             "time": "2024-01-28T23:22:08+00:00"
+        },
+        {
+            "name": "modules/post",
+            "version": "1.0",
+            "dist": {
+                "type": "path",
+                "url": "app-modules/post",
+                "reference": "1404c8e69a5b7215bcec495a3d8034f3154c9d12"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Modules\\Post\\Providers\\PostServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Modules\\Post\\": "src/",
+                    "Modules\\Post\\Tests\\": "tests/",
+                    "Modules\\Post\\Database\\Factories\\": "database/factories/",
+                    "Modules\\Post\\Database\\Seeders\\": "database/seeders/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "monolog/monolog",
