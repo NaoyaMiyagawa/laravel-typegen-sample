@@ -1,0 +1,19 @@
+<?php
+
+namespace Modules\Post\Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Modules\Post\Database\Seeders\PostSeeder;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void
+    {
+        $this->call([
+            PostSeeder::class,
+        ]);
+    }
+}

@@ -14,7 +14,6 @@ class UserSeeder extends Seeder
     {
         User::factory()
             ->count(10)
-            ->hasPosts(fake()->numberBetween(3, 10))
             ->create();
     }
 }
