@@ -1,5 +1,3 @@
-import { User } from '../../../../../resources/js/types/model';
-
 export type Comment = {
     id: string;
     post_id: string;
@@ -9,7 +7,6 @@ export type Comment = {
     created_at?: string;
     updated_at?: string;
     post?: Post;
-    user: User
 };
 export type Post = {
     id: string;
@@ -23,8 +20,3 @@ export type Post = {
     updated_at?: string;
     comments?: Comment[];
 };
-export enum PostStatus {
-    Draft = "draft",
-    Published = "published",
-    Unpublished = "unpublished"
-}
