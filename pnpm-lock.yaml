@@ -19,7 +19,7 @@ importers:
         version: 0.5.7(tailwindcss@3.4.3)
       '@vitejs/plugin-vue':
         specifier: ^5.0.0
-        version: 5.0.4(vite@5.2.10)(vue@3.4.26(typescript@5.4.5))
+        version: 5.0.4(vite@5.2.10(sass@1.76.0))(vue@3.4.26(typescript@5.4.5))
       autoprefixer:
         specifier: ^10.4.12
         version: 10.4.19(postcss@8.4.38)
@@ -28,10 +28,13 @@ importers:
         version: 1.6.8
       laravel-vite-plugin:
         specifier: ^1.0
-        version: 1.0.2(vite@5.2.10)
+        version: 1.0.2(vite@5.2.10(sass@1.76.0))
       postcss:
         specifier: ^8.4.31
         version: 8.4.38
+      sass:
+        specifier: ^1.76.0
+        version: 1.76.0
       tailwindcss:
         specifier: ^3.2.1
         version: 3.4.3
@@ -40,7 +43,7 @@ importers:
         version: 5.4.5
       vite:
         specifier: ^5.0
-        version: 5.2.10
+        version: 5.2.10(sass@1.76.0)
       vue:
         specifier: ^3.4.0
         version: 3.4.26(typescript@5.4.5)
@@ -657,6 +660,9 @@ packages:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
 
+  immutable@4.3.5:
+    resolution: {integrity: sha512-8eabxkth9gZatlwl5TBuJnCsoTADlL6ftEr7A4qgdaTsPyreilDSnUk57SO+jfKcNtxPa22U5KK6DSeAYhpBJw==}
+
   is-binary-path@2.1.0:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
     engines: {node: '>=8'}
@@ -903,6 +909,11 @@ packages:
 
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
+
+  sass@1.76.0:
+    resolution: {integrity: sha512-nc3LeqvF2FNW5xGF1zxZifdW3ffIz5aBb7I7tSvOoNu7z1RQ6pFt9MBuiPtjgaI62YWrM/txjWlOCFiGtf2xpw==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
 
   semver@7.6.0:
     resolution: {integrity: sha512-EnwXhrlwXMk9gKu5/flx5sv/an57AkRplG3hTK68W7FRDN+k+OWBj65M7719OkA82XLBxrcX0KSHj+X5COhOVg==}
@@ -1284,9 +1295,9 @@ snapshots:
 
   '@types/estree@1.0.5': {}
 
-  '@vitejs/plugin-vue@5.0.4(vite@5.2.10)(vue@3.4.26(typescript@5.4.5))':
+  '@vitejs/plugin-vue@5.0.4(vite@5.2.10(sass@1.76.0))(vue@3.4.26(typescript@5.4.5))':
     dependencies:
-      vite: 5.2.10
+      vite: 5.2.10(sass@1.76.0)
       vue: 3.4.26(typescript@5.4.5)
 
   '@volar/language-core@1.11.1':
@@ -1628,6 +1639,8 @@ snapshots:
 
   he@1.2.0: {}
 
+  immutable@4.3.5: {}
+
   is-binary-path@2.1.0:
     dependencies:
       binary-extensions: 2.3.0
@@ -1656,10 +1669,10 @@ snapshots:
 
   jiti@1.21.0: {}
 
-  laravel-vite-plugin@1.0.2(vite@5.2.10):
+  laravel-vite-plugin@1.0.2(vite@5.2.10(sass@1.76.0)):
     dependencies:
       picocolors: 1.0.0
-      vite: 5.2.10
+      vite: 5.2.10(sass@1.76.0)
       vite-plugin-full-reload: 1.1.0
 
   lilconfig@2.1.0: {}
@@ -1841,6 +1854,12 @@ snapshots:
     dependencies:
       queue-microtask: 1.2.3
 
+  sass@1.76.0:
+    dependencies:
+      chokidar: 3.6.0
+      immutable: 4.3.5
+      source-map-js: 1.2.0
+
   semver@7.6.0:
     dependencies:
       lru-cache: 6.0.0
@@ -1961,13 +1980,14 @@ snapshots:
       picocolors: 1.0.0
       picomatch: 2.3.1
 
-  vite@5.2.10:
+  vite@5.2.10(sass@1.76.0):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.17.1
     optionalDependencies:
       fsevents: 2.3.3
+      sass: 1.76.0
 
   vue-template-compiler@2.7.16:
     dependencies:
