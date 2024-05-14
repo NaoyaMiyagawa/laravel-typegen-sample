@@ -1,25 +1,25 @@
+export type Post = {
+    id: string;
+    title: string;
+    content?: string;
+    tags?: any[];
+    metadata?: Record<string, any>;
+    status: PostStatus;
+    user_id: number;
+    created_at?: string;
+    updated_at?: string;
+    user?: User;
+};
 export type User = {
     id: number;
-    name: any;
-    email: any;
-    email_verified_at?: any;
-    created_at?: any;
-    updated_at?: any;
+    name: string;
+    email: string;
+    email_verified_at?: string;
+    created_at?: string;
+    updated_at?: string;
     posts?: Post[];
     latest_post?: Post;
     latest_published_post?: Post;
-};
-export type Post = {
-    id: any;
-    title: any;
-    content?: string;
-    tags?: any;
-    metadata?: any;
-    status: PostStatus;
-    user_id: number;
-    created_at?: any;
-    updated_at?: any;
-    user?: User;
 };
 export enum PostStatus {
     Draft = "draft",
