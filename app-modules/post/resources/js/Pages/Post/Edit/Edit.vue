@@ -27,7 +27,11 @@ const form = useForm({
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
         <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
           <div>
-            <form @submit.prevent="form.put(route('posts.update', post))">
+            <form
+              @submit.prevent="
+                form.put(route('posts.update', { post: post.id }))
+              "
+            >
               <!-- title -->
               <div class="flex mb-4">
                 <label for="title" class="w-[100px]">Title</label>
