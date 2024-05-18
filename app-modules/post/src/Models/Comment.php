@@ -2,17 +2,20 @@
 
 declare(strict_types=1);
 
-namespace App\Models;
+namespace Modules\Post\Models;
 
-use App\Enums\PostStatus;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Modules\Post\Enums\CommentStatus;
 
-class Post extends Model
+class Comment extends Model
 {
     use HasFactory, HasUuids;
+
+    protected $table = 'post_comments';
 
     /**
      * The attributes that are mass assignable.
@@ -20,12 +23,10 @@ class Post extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'title',
-        'content',
-        'tags',
-        'metadata',
-        'status',
+        'post_id',
         'user_id',
+        'content',
+        'status',
     ];
 
     /**
@@ -36,10 +37,13 @@ class Post extends Model
     protected function casts(): array
     {
         return [
-            'tags' => 'array',
-            'metadata' => 'object',
-            'status' => PostStatus::class,
+            'status' => CommentStatus::class,
         ];
+    }
+
+    public function post(): BelongsTo
+    {
+        return $this->belongsTo(Post::class);
     }
 
     public function user(): BelongsTo

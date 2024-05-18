@@ -1,10 +1,10 @@
 <?php
 
-namespace Database\Factories;
+namespace Modules\Post\Database\Factories;
 
-use App\Enums\PostStatus;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Modules\Post\Enums\PostStatus;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
@@ -21,7 +21,7 @@ class PostFactory extends Factory
         $tags = ['Laravel', 'PHP', 'JavaScript', 'Vue.js', 'React'];
 
         return [
-            'title' => fake()->title(),
+            'title' => fake()->text(20),
             'content' => fake()->text(),
             'tags' => fake()->randomElements(
                 $tags,

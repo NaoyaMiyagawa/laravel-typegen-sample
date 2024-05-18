@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enums;
+namespace Modules\Post\Enums;
 
 enum PostStatus: string
 {
