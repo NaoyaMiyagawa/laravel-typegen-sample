@@ -6,8 +6,8 @@
         "build": "vue-tsc && vite build",
         "typegen": "pnpm run typegen:app && pnpm run typegen:module-auth && pnpm run typegen:module-post",
         "typegen:app": "laravel-typegen --form-request --ziggy",
-        "typegen:module-auth": "laravel-typegen --model-path 'app-modules/auth/src/Models' --output 'app-modules/auth/resources/js/types'",
-        "typegen:module-post": "laravel-typegen --model-path 'app-modules/post/src/Models' --output 'app-modules/post/resources/js/types'"
+        "typegen:module-auth": "laravel-typegen --model-path 'app-modules/auth/src/Models' --output 'app-modules/auth/resources/js/types' --form-request --form-request-path 'app-modules/auth/src/Http/Requests'",
+        "typegen:module-post": "laravel-typegen --model-path 'app-modules/post/src/Models' --output 'app-modules/post/resources/js/types' --form-request --form-request-path 'app-modules/post/src/Http/Requests'"
     },
     "devDependencies": {
         "@7nohe/laravel-typegen": "^0.5.2",
